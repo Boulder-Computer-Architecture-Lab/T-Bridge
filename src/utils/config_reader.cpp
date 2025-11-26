@@ -16,6 +16,7 @@
 #include <iostream>
 
 #include <tomlplusplus/include/toml++/toml.h>
+#include <filesystem>
 
 // Define the static config member.
 Config ConfigReader::m_config;
@@ -76,10 +77,23 @@ void ConfigReader::ValidateConfig()
     if (!IsPow2(m_config.m_line_size))
         throw std::runtime_error("Invalid configuration: Cache line size must be a power of 2.");
 
+        
     // Validate that trace file paths are not empty.
     if (m_config.m_input_trace_file.empty())
         throw std::runtime_error("Invalid configuration: Input trace file path is empty.");
 
     if (m_config.m_output_trace_file.empty())
         throw std::runtime_error("Invalid configuration: Output trace file path is empty.");
+
+    
+    // Validate that input trace file exists.
+    if (!std::filesystem::exists(m_config.m_input_trace_file))
+        throw std::invalid_argument("Input trace file not found: " + m_config.m_input_trace_file);
+
+    std::filesystem::path output_path(m_config.m_output_trace_file);
+    output_path = output_path.parent_path();
+    
+    // Validate that output trace directory exists.
+    if (!std::filesystem::exists(output_path) || !std::filesystem::is_directory(output_path))
+        throw std::invalid_argument("Output trace directory does not exist: " + output_path.string());
 }

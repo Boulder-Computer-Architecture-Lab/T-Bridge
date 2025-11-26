@@ -13,6 +13,8 @@
 #include <utils/trace_engine.h>
 
 #include <fstream>
+#include <filesystem>
+#include <iostream>
 
 // Define the static output file member.
 std::ofstream TraceEngine::m_output_file;
@@ -31,6 +33,10 @@ void TraceEngine::Initialize(std::string const& trace_file)
 
     if (m_is_shutdown)
         throw std::runtime_error("Cannot initialize TraceEngine: it has already been shutdown!");
+
+    // Warn if overwriting existing file.
+    if (std::filesystem::exists(trace_file))
+        std::cout << "Overwriting previous output trace: " << trace_file << std::endl;
 
     // Open the output file.
     m_output_file.open(trace_file, std::ios::trunc); 
