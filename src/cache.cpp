@@ -34,9 +34,9 @@ Cache::Cache(std::size_t sets, std::size_t ways, std::size_t line_size) :
     std::cout << "    Ways:       " << c_way_count << std::endl;
     std::cout << "    Line size:  " << line_size << " bytes" << std::endl;
     std::cout << "    Cache size: " << c_set_count * c_way_count * line_size << " bytes" << std::endl;
-    std::cout << "----------------" << std::endl;
-    std::cout << "    Tag shift:   " << c_tag_shift << std::endl;
-    std::cout << "    Set shift:   " << c_set_shift << std::endl;
+    std::cout << std::endl;
+    std::cout << "    Tag shift:  " << c_tag_shift << std::endl;
+    std::cout << "    Set shift:  " << c_set_shift << std::endl;
     std::cout << "    Byte mask:  " << std::hex << std::setfill('0') << std::setw(16) << c_byte_mask << std::dec << std::endl;
     std::cout << "    Set mask:   " << std::hex << std::setfill('0') << std::setw(16) << c_set_mask << std::dec << std::endl;
 

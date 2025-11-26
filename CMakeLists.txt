@@ -35,6 +35,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 include_directories(
     ${PROJECT_SOURCE_DIR}/include
     ${PROJECT_SOURCE_DIR}/src
+    ${PROJECT_SOURCE_DIR}/lib
 )
 
 # Define source files

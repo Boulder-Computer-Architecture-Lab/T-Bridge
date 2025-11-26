@@ -14,13 +14,18 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include <config_reader.h>
 #include <trace_engine.h>
 #include <cache.h>
 
 int main(int argc, char* argv[])
 {
-    TraceEngine::Initialize("trace.out");
-    Cache cache(/* Sets */ 32768, /* Ways */ 8, /* Line size */ 64);
+    ConfigReader::Load("sim.conf");
+    ConfigReader::PrintConfig();
+    Config config = ConfigReader::GetConfig();
+
+    TraceEngine::Initialize(config.m_output_trace_file);
+    Cache cache(/* Sets */ config.m_sets, /* Ways */ config.m_ways, /* Line size */ config.m_line_size);
 
     cache.PerformOperation(Operation::LOAD, 0x1234567890ABCDEF);
     cache.PerformOperation(Operation::STORE, 0x1234567890ABCDE0);
