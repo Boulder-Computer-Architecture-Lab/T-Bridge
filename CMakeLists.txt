@@ -39,7 +39,7 @@ include_directories(
 )
 
 # Define source files
-file(GLOB_RECURSE SOURCES "src/*.cpp")
+file(GLOB_RECURSE SOURCES "src/*.cpp" "core/*.cpp" "utils/*.cpp")
 
 # Define header files
 file(GLOB_RECURSE HEADERS "include/*.h")

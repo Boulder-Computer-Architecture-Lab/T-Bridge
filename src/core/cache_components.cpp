@@ -10,10 +10,10 @@
  * Victor Jimenez, "Unpublished Research", 2025.
  */
 
-#include <cache_components.h>
+#include <core/cache_components.h>
 
-#include <trace_engine.h>
-#include <clock.h>
+#include <utils/trace_engine.h>
+#include <utils/clock.h>
 
 #include <stdexcept>
 

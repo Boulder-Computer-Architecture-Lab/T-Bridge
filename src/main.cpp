@@ -14,9 +14,9 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include <config_reader.h>
-#include <trace_engine.h>
-#include <cache.h>
+#include <utils/config_reader.h>
+#include <utils/trace_engine.h>
+#include <core/cache.h>
 
 int main(int argc, char* argv[])
 {

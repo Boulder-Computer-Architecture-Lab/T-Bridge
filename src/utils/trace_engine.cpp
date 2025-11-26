@@ -10,7 +10,7 @@
  * Victor Jimenez, "Unpublished Research", 2025.
  */
 
-#include <trace_engine.h>
+#include <utils/trace_engine.h>
 
 #include <fstream>
 

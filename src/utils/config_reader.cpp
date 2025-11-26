@@ -10,7 +10,7 @@
  * Victor Jimenez, "Unpublished Research", 2025.
  */
 
-#include <config_reader.h>
+#include <utils/config_reader.h>
 
 #include <typedefs.h>
 #include <iostream>
