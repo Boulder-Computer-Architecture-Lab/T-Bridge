@@ -5,5 +5,5 @@ rm -rf build/*
 cd build
 cmake ..
 make
-cp bin/cachesimulator ../.
+cp bin/CacheSimulator ../.
 cd ..

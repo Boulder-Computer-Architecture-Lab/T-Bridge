@@ -14,21 +14,37 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include <utils/trace_reader.h>
-#include <utils/config_reader.h>
-#include <utils/trace_engine.h>
 #include <core/cache.h>
+#include <utils/config_reader.h>
+#include <utils/program_options.h>
+#include <utils/trace_reader.h>
+#include <utils/trace_engine.h>
+
+#include <filesystem>
 
 int main(int argc, char* argv[])
 {
-    ConfigReader::Load("sim.conf");
-    ConfigReader::PrintConfig();
+    // Parse program options.
+    ProgramOptions program_options(argc, argv);
 
+    // Should we exit?
+    if (program_options.m_should_exit)
+        return 0;
+
+    std::cout << "Loading configuration from: " << program_options.m_config_file << "..." << std::endl;
+
+    // Load configuration.
+    ConfigReader::Load(program_options.m_config_file);
+    ConfigReader::PrintConfig();
     Config config = ConfigReader::GetConfig();
+
+    // Initialize the output Trace Engine.
     TraceEngine::Initialize(config.m_output_trace_file);
 
+    // Initialize the input trace reader.
     TraceReader trace_reader(config.m_input_trace_file);
 
+    // Initialize the cache.
     Cache cache(/* Sets */ config.m_sets, /* Ways */ config.m_ways, /* Line size */ config.m_line_size);
 
     Operation op_type;
@@ -39,5 +55,6 @@ int main(int argc, char* argv[])
 
     cache.Flush();
     TraceEngine::Shutdown();
+
     return 0;
 }

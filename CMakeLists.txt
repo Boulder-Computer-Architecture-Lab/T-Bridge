@@ -45,11 +45,16 @@ file(GLOB_RECURSE SOURCES "src/*.cpp" "core/*.cpp" "utils/*.cpp")
 file(GLOB_RECURSE HEADERS "include/*.h")
 
 # Define main executable
-add_executable(cachesimulator ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+target_compile_definitions(${PROJECT_NAME} PRIVATE 
+    SIMULATOR_NAME="${PROJECT_NAME}"
+    SIMULATOR_VERSION="${PROJECT_VERSION}"
+)
 
 # Print configuration summary
 message(STATUS "")
-message(STATUS "Cache Simulator Build Configuration:")
+message(STATUS "${PROJECT_NAME} Build Configuration:")
 message(STATUS "  Version:           ${PROJECT_VERSION}")
 message(STATUS "  Build type:        ${CMAKE_BUILD_TYPE}")
 message(STATUS "  C++ Compiler:      ${CMAKE_CXX_COMPILER}")

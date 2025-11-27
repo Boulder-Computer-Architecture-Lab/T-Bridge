@@ -24,7 +24,16 @@ using way_t = uint32_t;
 
 using timestamp_t = uint64_t;
 
-// Constants
+// Define program name and version to prevent IDE warnings. They will be set during compilation by CMake.
+#ifndef SIMULATOR_NAME
+    #define SIMULATOR_NAME ""
+#endif
+#ifndef SIMULATOR_VERSION
+    #define SIMULATOR_VERSION ""
+#endif
+
+// Constants.
+#define DEFAULT_CONFIG_FILE "sim.conf"
 #define TIMESTAMP_MAX UINT64_MAX
 #define NO_WAY static_cast<way_t>(-1)
 
