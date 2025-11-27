@@ -14,9 +14,9 @@
 
 #include <utils/clock.h>
 
+#include <cmath>
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 #include <stdexcept>
 
 Cache::Cache(std::size_t sets, std::size_t ways, std::size_t line_size) :

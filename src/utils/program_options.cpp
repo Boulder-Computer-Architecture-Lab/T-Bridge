@@ -14,9 +14,9 @@
 
 #include <typedefs.h>
 
-#include <stdexcept>
-#include <iostream>
 #include <filesystem>
+#include <iostream>
+#include <stdexcept>
 
 ProgramOptions::ProgramOptions(int argc, char* argv[]) : m_config_file(DEFAULT_CONFIG_FILE), m_should_exit(false)
 {

@@ -13,10 +13,10 @@
 #ifndef CACHE_H
 #define CACHE_H
 
+#include <core/cache_components.h>
+
 #include <tuple>
 #include <vector>
-
-#include <core/cache_components.h>
 
 class Cache
 {

@@ -12,8 +12,8 @@
 
 #include <core/cache_components.h>
 
-#include <utils/trace_engine.h>
 #include <utils/clock.h>
+#include <utils/trace_engine.h>
 
 #include <stdexcept>
 

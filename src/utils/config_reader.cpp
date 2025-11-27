@@ -13,10 +13,11 @@
 #include <utils/config_reader.h>
 
 #include <typedefs.h>
-#include <iostream>
 
 #include <tomlplusplus/include/toml++/toml.h>
+
 #include <filesystem>
+#include <iostream>
 
 // Define the static config member.
 Config ConfigReader::m_config;

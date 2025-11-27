@@ -11,7 +11,7 @@
  * Victor Jimenez, "Unpublished Research", 2025.
  */
 
- #ifndef CACHE_COMPONENTS_H
+#ifndef CACHE_COMPONENTS_H
 #define CACHE_COMPONENTS_H
 
 #include <typedefs.h>

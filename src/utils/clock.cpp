@@ -10,7 +10,7 @@
  * Victor Jimenez, "Unpublished Research", 2025.
  */
 
- #include <utils/clock.h>
+#include <utils/clock.h>
 
 // Define the static m_cycle member.
 timestamp_t GlobalClock::m_cycle = 1;

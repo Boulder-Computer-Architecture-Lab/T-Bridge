@@ -12,8 +12,8 @@
 
 #include <utils/trace_engine.h>
 
-#include <fstream>
 #include <filesystem>
+#include <fstream>
 #include <iostream>
 
 // Define the static output file member.
