@@ -1,12 +1,12 @@
 # ==============================================================================
-# Project:     CacheSimulator
+# Project:     TBridge
 # Author:      Victor Jimenez (victor.jimenez@colorado.edu)
 # Institution: Boulder Computer Architecture Research Lab, University of Colorado Boulder, Colorado, USA
 # Date:        2025-11-25
 # ==============================================================================
 
 cmake_minimum_required(VERSION 3.10)
-project(CacheSimulator VERSION 1.0.0 LANGUAGES CXX)
+project(TBridge VERSION 1.0.0 LANGUAGES CXX)
 
 # Set C++17 as the required standard
 set(CMAKE_CXX_STANDARD 17)
