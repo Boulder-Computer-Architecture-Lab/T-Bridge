@@ -41,7 +41,7 @@ ProgramOptions::ProgramOptions(int argc, char* argv[]) : m_config_file(DEFAULT_C
         } 
         else if (argument == "-v")
         {
-            std::cout << SIMULATOR_NAME << " version " << SIMULATOR_VERSION << std::endl;
+            PrintVersion();
             m_should_exit = true;
             return;
         } 
@@ -60,10 +60,16 @@ ProgramOptions::ProgramOptions(int argc, char* argv[]) : m_config_file(DEFAULT_C
         throw std::invalid_argument("Configuration file not found: " + m_config_file);
 }
 
+void ProgramOptions::PrintVersion() const
+{
+    std::cout << SIMULATOR_NAME << " v" << SIMULATOR_VERSION << std::endl;
+}
+
 void ProgramOptions::PrintUsage() const
 {
-    std::cout << SIMULATOR_NAME << " version " << SIMULATOR_VERSION << std::endl
-              << "Usage: " << SIMULATOR_NAME << " [options]" << std::endl
+    PrintVersion();
+
+    std::cout << "Usage: " << SIMULATOR_NAME << " [options]" << std::endl
               << "Options: " << std::endl
               << "  -f <file>   Specify configuration file (Default: " << DEFAULT_CONFIG_FILE << ")" << std::endl
               << "  -v          Show version information" << std::endl

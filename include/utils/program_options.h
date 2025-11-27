@@ -30,6 +30,9 @@ public:
 private:
     // Prints usage information to the console.
     void PrintUsage() const;
+
+    // Prints version information to the console.
+    void PrintVersion() const;
 };
 
 #endif // PROGRAM_OPTIONS_H
