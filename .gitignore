@@ -1,6 +1,10 @@
 ## Binary executable
 TBridge
 
+## Vscode and Jetbrains IDE configuration.
+.vscode
+.idea
+
 ## Build directory
 build
 
