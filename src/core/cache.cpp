@@ -64,11 +64,9 @@ void Cache::PerformOperation(Operation const operation, address_t const address)
     switch (operation)
     {
         case Operation::LOAD:
-            std::cout << "LD 0x" << std::hex << full_address << std::dec << std::endl;
             m_sets[set]->Load(full_address, tag);
             break;
         case Operation::STORE:
-            std::cout << "ST 0x" << std::hex << full_address << std::dec << std::endl;
             m_sets[set]->Store(full_address, tag);
             break;
         default:

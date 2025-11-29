@@ -66,7 +66,7 @@ void TraceEngine::Load(address_t const address)
 {
     // Log a load operation.
     CheckActive();
-    m_output_file << "LD " << std::hex << address << std::dec << std::endl;
+    m_output_file << "LD 0x" << std::hex << address << std::dec << std::endl;
 }
 
 
@@ -74,7 +74,7 @@ void TraceEngine::Store(address_t const address)
 {
     // Log a store operation.
     CheckActive();
-    m_output_file << "ST " << std::hex << address << std::dec << std::endl;
+    m_output_file << "ST 0x" << std::hex << address << std::dec << std::endl;
 }
 
 void TraceEngine::Shutdown()
